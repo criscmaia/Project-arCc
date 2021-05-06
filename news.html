@@ -10,6 +10,18 @@
     <link href="/Project-arCc/index.css" rel="stylesheet">
 
     <title>Project-arCc - News</title>
+
+    <style>
+        .post {
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        .post img {
+            width: 200px;
+        }
+
+    </style>
 </head>
 
 <body class="limit1130 bg-light">
@@ -19,18 +31,39 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-9">
-               <h1>News</h1>
-                <p>Sample text size just copy paste on page and I will edit. Sample text size just copy paste on page and I will edit. Sample text size just copy paste on page and I will edit. Sample text size just copy paste on page and I will edit. Sample text size just copy paste on page and I will edit. Sample text size just copy paste on page and I will edit. Sample text size just copy paste on page and I will edit. Sample text size just copy paste on page and I will edit. Sample text size just copy paste on page and I will edit. Sample text size just copy paste on page and I will edit. Sample text size just copy paste on page and I will edit. Sample text size just copy paste on page and I will edit. Sample text size just copy paste on page and I will edit. Sample text size just copy paste on page and I will edit. Sample text size just copy paste on page and I will edit. Sample text size just copy paste on page and I will edit. Sample text size just copy paste on page and I will edit. Sample text size just copy paste on page and I will edit. Sample text size just copy paste on page and I will edit. Sample text size just copy paste on page and I will edit. Sample text size just copy paste on page and I will edit. Sample text size just copy paste on page and I will edit. Sample text size just copy paste on page and I will edit. Sample text size just copy paste on page and I will edit.</p>
-                
-                <ul>
-                    <li>News item 1</li>
-                    <li>News item 1</li>
-                    <li>News item 1</li>
-                </ul>
+                <h1>News</h1>
+
+                <div class="row">
+                    <div class="leftcolumn">
+                        <div class="card post">
+                            <h2>TITLE HEADING</h2>
+                            <h5>Title description, Dec 7, 2017</h5>
+                            <img src="https://via.placeholder.com/200">
+                            <p>Some text..</p>
+                            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                        </div>
+                        <div class="card post">
+                            <h2>TITLE HEADING</h2>
+                            <h5>Title description, Dec 7, 2017</h5>
+                            <img src="https://via.placeholder.com/200">
+                            <p>Some text..</p>
+                            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                        </div>
+                        <div class="card post">
+                            <h2>TITLE HEADING</h2>
+                            <h5>Title description, Dec 7, 2017</h5>
+                            <img src="https://via.placeholder.com/200">
+                            <p>Some text..</p>
+                            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
             <div class="col-lg-3 dark-gray" id="keyDetails"></div>
         </div>
-        
+
 
     </div>
 
@@ -43,9 +76,12 @@
 </body>
 <script>
     $(function() {
-        $("#menu").load("menu.html");
-        //$("#banner").load("banner.html");
-        //$("#keyDetails").load("keyDetails.html");
+        $("#menu").load("menu.html", function() {
+            var pg = '/Project-arCc' + window.location.href.substring(window.location.href.lastIndexOf("/"));
+            $('a[href="' + pg + '"]').parent('li').addClass('active');
+        });
+        $("#banner").load("banner.html");
+        $("#keyDetails").load("keyDetails.html");
         $("#footer").load("footer.html");
     });
 
