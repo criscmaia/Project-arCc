@@ -11,15 +11,42 @@
     <title>Project-arCc</title>
 </head>
 
-<body>
-   <h1>Upload file to the arCc: </h1>
-    <form action="uploadArcc.php" method="post" enctype="multipart/form-data">
+<body class="limit1130 bg-light">
+    <nav class="navbar navbar-expand-lg sticky-top" id="menu"></nav>
+    <div class="container-fluid" id="banner"></div>
 
-        <input type="file" name="file[]" id="file" multiple>
-        <input type='submit' name='submit' value='Upload'>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-9">
+                <h1>Upload file to the arCc: </h1>
+                <p>Only word, porwepoint, pdf and images (png, jpg, jpeg) are allowed </p>
+                <form action="uploadArcc.php" method="post" enctype="multipart/form-data">
 
-    </form>
+                    <input type="file" name="file[]" id="file" multiple>
+                    <input type='submit' name='submit' value='Upload'>
 
+                </form>
+
+            </div>
+            <div class="col-lg-3 dark-gray" id="keyDetails"></div>
+        </div>
+    </div>
+
+    <footer class="footer" id="footer"></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
+<script>
+    $(function() {
+        $("#menu").load("menu.html", function() {
+            var pg = '/Project-arCc' + window.location.href.substring(window.location.href.lastIndexOf("/"));
+            $('a[href="' + pg + '"]').parent('li').addClass('active');
+        });
+        $("#banner").load("banner.html");
+        $("#keyDetails").load("keyDetails.html");
+        $("#footer").load("footer.html");
+    });
+
+</script>
 
 </html>

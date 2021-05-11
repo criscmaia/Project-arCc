@@ -54,7 +54,8 @@
         }
 
         #banner .row {
-            background-color: #2e8040;
+            /*            background-color: #2e8040;*/
+            border-bottom: 1px green dashed;
             padding: 20px 0;
             margin-bottom: 20px;
         }
